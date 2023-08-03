@@ -1,0 +1,36 @@
+@import "variables";
+
+@mixin container {
+    max-width: 1170px;
+    padding: 1.5rem 1rem;
+    margin: 0 auto;
+}
+
+@mixin center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+@mixin background($img) {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(100%);
+    transition: all .7s;
+    cursor: pointer;
+    background-image: url('../img/#{$img}.jpg');
+
+    &:hover {
+        background-size: 110%;
+        filter: grayscale(0);
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5),url('../img/#{$img}.jpg'));
+    }
+}
+
+@mixin mobile {
+    @media(max-width: 425px){
+        
+        @content
+    }
+}

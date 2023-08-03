@@ -1,0 +1,161 @@
+@import "variables";
+@import "mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  background-color: $bg-color;
+  color: $text-color;
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+    transition: .4s;
+  }
+
+  ul {
+    list-style: none;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  @include container;
+  @include mobile{
+    padding: 1.1rem;
+  }
+
+    &-brand {
+      color: $primary-color;
+      font-size: 3rem;
+      
+    }
+    &-navbar {
+        ul {
+          height: 100%;
+          @include center;
+          @include mobile {
+            display: none;
+          }
+          
+
+          li {
+            text-transform: uppercase;
+            margin: 0 1rem;
+            font-size: .8rem;
+
+            .active {
+              color:$secondary-color;
+            }
+
+            a:hover {
+              color: $secondary-color;
+            }
+          }
+        }
+    }
+
+    &-social{
+      ul {
+        @include center;
+        height: 100%;
+        @include mobile {
+          display:none;
+        }
+
+        li {
+          margin: 0 1rem;
+
+          a:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+}
+
+.gallery {
+  @include center;
+  @include container;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  &-card {
+    width: 31%;
+    height: 400px;
+    margin-bottom: 4%;
+    text-align: center;
+    @include center;
+    flex-direction: column;
+    @include mobile{
+      width: 90%;
+      margin-bottom: 6%;
+    }
+
+    &-title {
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+      color: $primary-color;
+    }
+
+    &-btn {
+      padding: .6rem 2rem;
+      border: 2px solid $primary-color;
+      color:$primary-color;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      &:hover {
+        background-color: $primary-color;
+        color: $secondary-color;
+      }
+    }
+
+  }
+
+  #card-1 {
+    @include background('animais');
+  }
+  #card-2 {
+    @include background('arquitetura');
+  }
+  #card-3 {
+    @include background('cidade');
+  }
+  #card-4 {
+    @include background('decoracao');
+  }
+  #card-5 {
+    @include background('esportes');
+  }
+  #card-6 {
+    @include background('natureza');
+  }
+  #card-7 {
+    @include background('paisagem');
+  }
+  #card-8 {
+    @include background('pessoas');
+  }
+  #card-9 {
+    @include background('refeicoes');
+  }
+}
+
+
+
+
